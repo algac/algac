@@ -1,0 +1,13 @@
+# build -c opt --copt=-std=c99 --cxxopt=-std=c++11
+
+build -c opt
+build --show_timestamps
+build --verbose_failures
+
+run -c opt
+
+test -c opt
+
+# Specifies how test output should be displayed:
+# [summary|errors|all|streamed]
+test --test_output=streamed
