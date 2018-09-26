@@ -25,6 +25,7 @@
  **/
 #include "algac/base/base.h"
 
+#include <algorithm>
 #include <atomic>
 #include <deque>
 #include <functional>  // function
@@ -236,6 +237,68 @@ TEST(Base, Vector) {
   PrintVector(v);
   v.erase(v.begin() + 2);
   PrintVector(v);
+}
+
+TEST(Base, Sort) {
+  InitGoogleLogging();
+
+  int step = 0;
+
+  std::function<void(const vector<int>&)> PrintVector =
+      [&step](const vector<int>& v) {
+        string line;
+        for (const auto& e : v) {
+          // LOG(INFO) << "elem = " << e;
+          line += std::to_string(e);
+          line += " ";
+        }
+        LOG(INFO) << "Vector[" << (step++) << "] ( size = " << v.size()
+                  << " ): " << line;
+      };
+
+  std::vector<int> vec{32, 71, 12, 45,
+                       26, 80, 53, 33};  // 32 71 12 45 26 80 53 33
+
+  EXPECT_EQ(32, vec[0]);
+  EXPECT_EQ(71, vec[1]);
+  EXPECT_EQ(12, vec[2]);
+  EXPECT_EQ(45, vec[3]);
+  EXPECT_EQ(26, vec[4]);
+  EXPECT_EQ(80, vec[5]);
+  EXPECT_EQ(53, vec[6]);
+  EXPECT_EQ(33, vec[7]);
+
+  PrintVector(vec);
+
+  // using default comparison (operator <):
+  std::sort(vec.begin(), vec.begin() + 4);  //(12 32 45 71)26 80 53 33
+
+  EXPECT_EQ(12, vec[0]);
+  EXPECT_EQ(32, vec[1]);
+  EXPECT_EQ(45, vec[2]);
+  EXPECT_EQ(71, vec[3]);
+  EXPECT_EQ(26, vec[4]);
+  EXPECT_EQ(80, vec[5]);
+  EXPECT_EQ(53, vec[6]);
+  EXPECT_EQ(33, vec[7]);
+
+  PrintVector(vec);
+
+  // using function as comp
+  std::sort(vec.begin() + 5, vec.end(), [](int l, int r) -> bool {
+    return (l / 10 - l % 10) < (r / 10 - r % 10);
+  });  // 12 32 45 71 26 { 33 53 80 }
+
+  EXPECT_EQ(12, vec[0]);
+  EXPECT_EQ(32, vec[1]);
+  EXPECT_EQ(45, vec[2]);
+  EXPECT_EQ(71, vec[3]);
+  EXPECT_EQ(26, vec[4]);
+  EXPECT_EQ(33, vec[5]);
+  EXPECT_EQ(53, vec[6]);
+  EXPECT_EQ(80, vec[7]);
+
+  PrintVector(vec);
 }
 
 }  // namespace algac
