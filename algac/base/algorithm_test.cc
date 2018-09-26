@@ -35,14 +35,17 @@
 #include <unordered_set>
 #include <vector>
 
+#include "algac/base/utils.h"
+
 #include "glog/logging.h"
 #include "gtest/gtest.h"
 
 namespace algac {
 TEST(Algorithm, BSearch) {
+  InitGoogleLogging();
   vector<int> vec{1, 2, 3, 4, 5, 6};
   int off = BSearch<int>(vec, 4, 0, vec.size());
   EXPECT_EQ(3, off);
-  LOG(INFO) << "search not found : " << BSearch<int>(vec, 9, 0, vec.size());
+  LOG(INFO) << "BSearch element does not exists: " << BSearch<int>(vec, 9, 0, vec.size());
 }
 }  // namespace algac

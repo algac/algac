@@ -1,7 +1,7 @@
 _ARGCV_REPO_BASE_URL = "https://github.com/yuikns/argcv/archive"
 _ARGCV_REVISION = "ARGCV_REVISION"
 
-def _argcv_archive(ctx):
+def _argcv_repo(ctx):
   git_commit = "master"
   sha256 = ""
   if ctx.attr.git_commit:
@@ -25,8 +25,8 @@ def _argcv_archive(ctx):
       "",
       strip_prefix)
 
-argcv_archive = repository_rule(
-    implementation=_argcv_archive,
+argcv_repo = repository_rule(
+    implementation=_argcv_repo,
     attrs={
         "git_commit": attr.string(mandatory=False),
         "sha256": attr.string(mandatory=False),

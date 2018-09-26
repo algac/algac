@@ -69,8 +69,8 @@ using std::unordered_map;
 using std::unordered_set;
 using std::vector;
 
-auto tf = std::boolalpha;
-auto notf = std::noboolalpha;
+constexpr auto tf = std::boolalpha;
+constexpr auto notf = std::noboolalpha;
 
 }  // namespace algac
 

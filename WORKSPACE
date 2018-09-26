@@ -1,8 +1,8 @@
 workspace(name = "hello_gl")
 
-load("//tools:argcv_archive.bzl", "argcv_archive")
+load("//tools:argcv_repo.bzl", "argcv_repo")
 
-argcv_archive(name = "com_github_argcv_argcv")
+argcv_repo(name = "com_github_argcv_argcv")
 
 load("@com_github_argcv_argcv//tools:version.bzl", "check_version")
 
