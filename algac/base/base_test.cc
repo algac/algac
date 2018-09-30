@@ -111,7 +111,7 @@ TEST(Base, PriorityQueue) {
   //     }
   // for std::greater<> : return lhs > rhs;
   // or std::less
-  priority_queue<int, std::vector<int>, std::greater<int> > q2;
+  priority_queue<int, std::vector<int>, std::greater<int>> q2;
 
   for (int n : {1, 8, 5, 6, 3, 4, 0, 9, 7, 2}) q2.push(n);
 
@@ -237,6 +237,23 @@ TEST(Base, Vector) {
   PrintVector(v);
   v.erase(v.begin() + 2);
   PrintVector(v);
+
+  int v2di = 2;
+  int v2dj = 3;
+  vector<vector<int>> v2d(v2di, vector<int>(v2dj));
+
+  for (int i = 0; i < v2di; i++) {
+    for (int j = 0; j < v2dj; j++) {
+      v2d[i][j] = i * 10 + j;
+    }
+  }
+
+  for (int i = 0; i < v2di; i++) {
+    for (int j = 0; j < v2dj; j++) {
+      v2d[i][j] = i * 10 + j;
+      LOG(INFO) << "v2d[" << i << "][" << j << "] = " << v2d[i][j];
+    }
+  }
 }
 
 TEST(Base, Sort) {
