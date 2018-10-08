@@ -28,6 +28,8 @@
 
 #include "algac/base/base.h"
 
-namespace algac {}  // namespace algac
+namespace algac {
+    
+}  // namespace algac
 
 #endif  // ALGAC_TREE_TREE_H_

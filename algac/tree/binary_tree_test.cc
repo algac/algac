@@ -23,7 +23,30 @@
  * SOFTWARE.
  *
  **/
-#ifndef ALGAC_BASE_GRAPH_H_
-#define ALGAC_BASE_GRAPH_H_
-namespace algac {}  // namespace algac
-#endif              // ALGAC_BASE_GRAPH_H_
+#include "algac/tree/binary_tree.h"
+
+#include <atomic>
+#include <deque>
+#include <functional>  // function
+#include <queue>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+
+#include "algac/base/utils.h"
+
+#include "glog/logging.h"
+#include "gtest/gtest.h"
+
+namespace algac {
+TEST(BinaryTree, Basic) {
+  InitGoogleLogging();
+  //
+  string line = "[1, 2, 3, 4, null, 5, 6]";
+  TreeNode* root = TreeNode::FromString(line);
+  root->PrettyPrintTree();
+  LOG(INFO) << "ToString" << root->ToString();
+}
+}  // namespace algac

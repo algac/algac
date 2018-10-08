@@ -26,20 +26,22 @@
 #ifndef ALGAC_BASE_BASE_H_
 #define ALGAC_BASE_BASE_H_
 
+#include <algorithm>
 #include <atomic>
 #include <deque>
 #include <iostream>
 #include <queue>  // queue & priority_queue
 #include <stack>
-#include <string>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
+#include "algac/base/string.h"
 #include "algac/base/utils.h"
 
 namespace algac {
 
+// Basic Primary Types
 typedef int64_t i64t;
 typedef int32_t i32t;
 typedef int16_t i16t;
@@ -56,7 +58,7 @@ typedef long double f128t;
 typedef double f64t;
 typedef float f32t;
 
-using std::string;
+// Basic Containers
 
 template <typename T>
 using atomic = std::atomic<T>;  // typedef std::atomic<T> as atomic<T>
@@ -69,8 +71,14 @@ using std::unordered_map;
 using std::unordered_set;
 using std::vector;
 
+// Basic Variables
 constexpr auto tf = std::boolalpha;
 constexpr auto notf = std::noboolalpha;
+
+// Basic Functions
+using std::cin;  // iostream
+using std::cout; // iostream
+using std::find_if;  // from algorithm
 
 }  // namespace algac
 

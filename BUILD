@@ -33,6 +33,7 @@ cc_library(
     ),
     deps = [
         "//external:glog",
+        "@com_github_argcv_argcv//argcv/cxx:str",
     ],
 )
 

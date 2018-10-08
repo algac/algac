@@ -23,7 +23,25 @@
  * SOFTWARE.
  *
  **/
-#ifndef ALGAC_BASE_LIST_H_
-#define ALGAC_BASE_LIST_H_
-namespace algac {}  // namespace algac
-#endif              // ALGAC_BASE_LIST_H_
+#include "algac/base/string.h"
+
+#include <algorithm>
+#include <atomic>
+#include <deque>
+#include <functional>  // function
+#include <queue>
+#include <stack>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+
+#include "glog/logging.h"
+#include "gtest/gtest.h"
+
+namespace algac {
+TEST(String, Basic) {
+    
+}
+
+}  // namespace algac
