@@ -29,6 +29,7 @@
 #include <algorithm>
 #include <sstream>  // stringstream
 #include <string>
+#include <vector>
 
 namespace algac {
 
@@ -65,6 +66,30 @@ inline static string TrimRight(string input) {
 
 inline static string Trim(string input) {  // TrimLeft + TrimRight
   return TrimLeft(TrimRight(input));
+}
+
+inline static std::vector<string> Split(const std::string &s,
+                                        const std::string &delim,
+                                        bool skip_blank_elem = true) noexcept {
+  std::vector<std::string> elems;
+  std::string item;
+  if (delim.empty()) {
+    elems.push_back(s);
+    return elems;
+  }
+  std::string::const_iterator substart = s.begin(), subend;
+  while (true) {
+    subend = search(substart, s.end(), delim.begin(), delim.end());
+    std::string temp(substart, subend);
+    if (!skip_blank_elem || !temp.empty()) {
+      elems.push_back(temp);
+    }
+    if (subend == s.end()) {
+      break;
+    }
+    substart = subend + delim.size();
+  }
+  return elems;
 }
 
 inline static string ToLower(string input) {
