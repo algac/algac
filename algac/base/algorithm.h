@@ -26,9 +26,14 @@
 #ifndef ALGAC_BASE_ALGORITHM_H_
 #define ALGAC_BASE_ALGORITHM_H_
 
-#include "algac/base/base.h"
+#include <algorithm>
+
+#include "algac/base/vector.h"
 
 namespace algac {
+
+// functions
+using std::find_if;  // from algorithm
 
 template <typename T>
 int BSearch(vector<T> &elems, int key, int start, int end) {

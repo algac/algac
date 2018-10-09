@@ -23,23 +23,17 @@
  * SOFTWARE.
  *
  **/
-#ifndef ALGAC_BASE_BASE_H_
-#define ALGAC_BASE_BASE_H_
+#ifndef ALGAC_BASE_ATOMIC_H_
+#define ALGAC_BASE_ATOMIC_H_
 
-#include "algac/base/atomic.h"
-#include "algac/base/ios.h"
-#include "algac/base/map.h"
-#include "algac/base/queue.h"
-#include "algac/base/stack.h"
-#include "algac/base/string.h"
-#include "algac/base/type.h"
-#include "algac/base/utils.h"
-#include "algac/base/vector.h"
+#include <atomic>
 
 namespace algac {
 
-// anything else?
+template <typename T>
+using atomic = std::atomic<T>;  // typedef std::atomic<T> as atomic<T>
+
 
 }  // namespace algac
 
-#endif  // ALGAC_BASE_BASE_H_
+#endif  // ALGAC_BASE_ATOMIC_H_

@@ -23,23 +23,30 @@
  * SOFTWARE.
  *
  **/
-#ifndef ALGAC_BASE_BASE_H_
-#define ALGAC_BASE_BASE_H_
+#ifndef ALGAC_BASE_TYPE_H_
+#define ALGAC_BASE_TYPE_H_
 
-#include "algac/base/atomic.h"
-#include "algac/base/ios.h"
-#include "algac/base/map.h"
-#include "algac/base/queue.h"
-#include "algac/base/stack.h"
-#include "algac/base/string.h"
-#include "algac/base/type.h"
-#include "algac/base/utils.h"
-#include "algac/base/vector.h"
+#include <cstdint>
 
 namespace algac {
 
-// anything else?
+// Basic Primary Types
+typedef int64_t i64t;
+typedef int32_t i32t;
+typedef int16_t i16t;
+typedef int8_t i8t;
+typedef char i4t;
+
+typedef uint64_t u64t;
+typedef uint32_t u32t;
+typedef uint16_t u16t;
+typedef uint8_t u8t;
+typedef unsigned char u4t;
+
+typedef long double f128t;
+typedef double f64t;
+typedef float f32t;
 
 }  // namespace algac
 
-#endif  // ALGAC_BASE_BASE_H_
+#endif  // ALGAC_BASE_TYPE_H_

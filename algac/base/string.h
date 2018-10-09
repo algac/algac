@@ -29,19 +29,24 @@
 #include <algorithm>
 #include <sstream>  // stringstream
 #include <string>
-#include <vector>
+
+#include "algac/base/algorithm.h"
+#include "algac/base/vector.h"
 
 namespace algac {
 
+// Base Container
 using std::string;        // from string
 using std::stringstream;  // from sstream
 
+// Base Functions
 using std::getline;    // from string
 using std::to_string;  // from string
 
+// Base Aliases
 inline static string TrimLeft(string input) {
   input.erase(input.begin(),              // Erase from start
-              std::find_if(               // Find 1st nonspace char
+              find_if(                    // Find 1st nonspace char
                   input.begin(),          //
                   input.end(),            //
                   [](int ch) {            //
@@ -52,7 +57,7 @@ inline static string TrimLeft(string input) {
 }
 
 inline static string TrimRight(string input) {
-  input.erase(std::find_if(               //
+  input.erase(find_if(                    //
                   input.rbegin(),         //
                   input.rend(),           //
                   [](int ch) {            //
@@ -68,19 +73,18 @@ inline static string Trim(string input) {  // TrimLeft + TrimRight
   return TrimLeft(TrimRight(input));
 }
 
-inline static std::vector<string> Split(const std::string &s,
-                                        const std::string &delim,
-                                        bool skip_blank_elem = true) noexcept {
-  std::vector<std::string> elems;
-  std::string item;
+inline static vector<string> Split(const string &s, const string &delim,
+                                   bool skip_blank_elem = true) noexcept {
+  vector<string> elems;
+  string item;
   if (delim.empty()) {
     elems.push_back(s);
     return elems;
   }
-  std::string::const_iterator substart = s.begin(), subend;
+  string::const_iterator substart = s.begin(), subend;
   while (true) {
     subend = search(substart, s.end(), delim.begin(), delim.end());
-    std::string temp(substart, subend);
+    string temp(substart, subend);
     if (!skip_blank_elem || !temp.empty()) {
       elems.push_back(temp);
     }

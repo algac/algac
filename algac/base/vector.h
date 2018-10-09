@@ -23,23 +23,15 @@
  * SOFTWARE.
  *
  **/
-#ifndef ALGAC_BASE_BASE_H_
-#define ALGAC_BASE_BASE_H_
+#ifndef ALGAC_BASE_VECTOR_H_
+#define ALGAC_BASE_VECTOR_H_
 
-#include "algac/base/atomic.h"
-#include "algac/base/ios.h"
-#include "algac/base/map.h"
-#include "algac/base/queue.h"
-#include "algac/base/stack.h"
-#include "algac/base/string.h"
-#include "algac/base/type.h"
-#include "algac/base/utils.h"
-#include "algac/base/vector.h"
+#include <vector>
 
 namespace algac {
 
-// anything else?
+using std::vector;
 
 }  // namespace algac
 
-#endif  // ALGAC_BASE_BASE_H_
+#endif  // ALGAC_BASE_VECTOR_H_

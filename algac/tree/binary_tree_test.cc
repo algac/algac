@@ -44,7 +44,7 @@ namespace algac {
 TEST(BinaryTree, Basic) {
   InitGoogleLogging();
   //
-  string line = "[1, 2, 3, 4, null, 5, 6]";
+  string line = "[ 11,2 , 3 , 4, null, 1994, 6, null,null,null,null, 13] ";
   TreeNode* root = TreeNode::FromString(line);
   root->PrettyPrintTree();
   LOG(INFO) << "ToString" << root->ToString();
