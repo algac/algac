@@ -34,6 +34,7 @@ namespace algac {
 
 // functions
 using std::find_if;  // from algorithm
+using std::sort;
 
 template <typename T>
 int BSearch(vector<T> &elems, int key, int start, int end) {
