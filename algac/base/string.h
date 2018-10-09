@@ -67,6 +67,22 @@ inline static string Trim(string input) {  // TrimLeft + TrimRight
   return TrimLeft(TrimRight(input));
 }
 
+inline static string ToLower(string input) {
+  string out;
+  for (const auto c : input) {
+    out += std::tolower(c);
+  }
+  return out;
+}
+
+inline static string ToUpper(string input) {
+  string out;
+  for (const auto c : input) {
+    out += std::toupper(c);
+  }
+  return out;
+}
+
 }  // namespace algac
 
 #endif  // ALGAC_BASE_STRING_H_
