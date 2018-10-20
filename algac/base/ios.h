@@ -33,7 +33,6 @@ namespace algac {
 constexpr auto tf = std::boolalpha;
 constexpr auto notf = std::noboolalpha;
 
-
 // Basic Functions
 using std::cin;   // iostream
 using std::cout;  // iostream

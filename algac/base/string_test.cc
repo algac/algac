@@ -40,8 +40,6 @@
 #include "gtest/gtest.h"
 
 namespace algac {
-TEST(String, Basic) {
-    
-}
+TEST(String, Basic) {}
 
 }  // namespace algac

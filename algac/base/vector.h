@@ -32,6 +32,23 @@ namespace algac {
 
 using std::vector;
 
+// template <typename T>
+// using Matrix2d = vector<vector<T>>;
+
+template <typename T>
+vector<vector<T>> Vec2d(int row, int col) {
+  vector<vector<T>> vec(row, vector<T>(col));
+  // vec[row][col]
+  return vec;
+}
+
+template <typename T>
+vector<vector<T>> Vec2d(int row, int col, T value) {
+  vector<vector<T>> vec(row, vector<T>(col, value));
+  // vec[row][col]
+  return vec;
+}
+
 }  // namespace algac
 
 #endif  // ALGAC_BASE_VECTOR_H_

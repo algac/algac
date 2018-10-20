@@ -11,3 +11,4 @@ test -c opt
 # Specifies how test output should be displayed:
 # [summary|errors|all|streamed]
 test --test_output=streamed
+

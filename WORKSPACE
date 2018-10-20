@@ -6,8 +6,8 @@ argcv_repo(name = "com_github_argcv_argcv")
 
 load("@com_github_argcv_argcv//tools:version.bzl", "check_version")
 
-check_version("0.4.3")
+check_version("0.17.0")
 
-load("@com_github_argcv_argcv//tools:argcv_deps.bzl", "argcv_deps")
-argcv_deps("com_github_argcv_argcv")
+load("@com_github_argcv_argcv//argcv:argcv.bzl", "ws_argcv")
+ws_argcv("com_github_argcv_argcv")
 

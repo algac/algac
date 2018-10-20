@@ -33,7 +33,6 @@ namespace algac {
 template <typename T>
 using atomic = std::atomic<T>;  // typedef std::atomic<T> as atomic<T>
 
-
 }  // namespace algac
 
 #endif  // ALGAC_BASE_ATOMIC_H_

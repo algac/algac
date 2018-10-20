@@ -256,5 +256,4 @@ TEST(Base, Vector) {
   }
 }
 
-
 }  // namespace algac
