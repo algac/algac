@@ -1,4 +1,4 @@
-workspace(name = "hello_gl")
+workspace(name = "algac")
 
 load("//tools:argcv_repo.bzl", "argcv_repo")
 
